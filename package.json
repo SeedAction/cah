@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/SeedAction/cah/issues"
   },
-  "homepage": "https://github.com/SeedAction/cah#readme"
+  "homepage": "https://github.com/SeedAction/cah#readme",
+  "dependencies": {
+    "socket.io": "^2.0.3"
+  }
 }
