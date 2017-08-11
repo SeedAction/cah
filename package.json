@@ -1,0 +1,26 @@
+{
+  "name": "cah",
+  "version": "1.0.0",
+  "description": "Cards Against Humanity",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeedAction/cah.git"
+  },
+  "keywords": [
+    "cards",
+    "game",
+    "io",
+    "multiplayer",
+    "mobile"
+  ],
+  "author": "Anselin LOHNER",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SeedAction/cah/issues"
+  },
+  "homepage": "https://github.com/SeedAction/cah#readme"
+}
