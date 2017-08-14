@@ -2,15 +2,18 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Socket.io</title>
+        <title>Cards Against Humanity - The online, multiplayer game</title>
+        <script src="/socket.io/socket.io.js"></script>
     </head>
 
     <body>
-        <h1>Communication avec socket.io !</h1>
-
-        <script src="/socket.io/socket.io.js"></script>
-        <script>
-            var socket = io.connect('http://localhost:8080');
-        </script>
+        <header>
+          <h1 id="logo">Cards Against Humanity</h1>
+        </header>
+        <div id="content">
+          <h2>Welcome fu**er!</h2>
+          <button id="createNewGame">Create</button>
+          <button id="joinGame">Join</button>
+        </div>
     </body>
 </html>
