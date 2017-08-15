@@ -1,22 +1,26 @@
-var http = require('http');
-var fs = require('fs');
+/****************************
+* DEPENDANCIES
+*****************************/
+var express = require('express');
+var socket = require('socket.io');
 
-// Send index.html uppon request
-var server = http.createServer(function(req, res) {
-    fs.readFile('./index.html', 'utf-8', function(error, content) {
-        res.writeHead(200, {"Content-Type": "text/html"});
-        res.end(content);
-    });
+/****************************
+* APP SETUP
+*****************************/
+var app = express();
+var server = app.listen(8080, function(){
+  console.log('Listening to requests on port 8080...');
 });
 
-// Binding socket.io to the created server
-var io = require('socket.io').listen(server);
+/****************************
+* STATIC FILES
+*****************************/
+app.use(express.static('public'));
 
-// Client connection
-io.sockets.on('connection', function (socket) {
-    console.log('Un client est connecté !');
-    socket.emit('message', { content: 'Vous êtes bien connecté !', importance: '1' });
+/****************************
+* SOCKET SETUP (SERVER SIDE)
+*****************************/
+var io = socket(server);
+io.on('connection',function(socket){
+  console.log('New client connected ; id = ' + socket.id);
 });
-
-
-server.listen(8080);
